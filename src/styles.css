@@ -1,0 +1,252 @@
+@import "tailwindcss";
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.16 0.018 260);
+  --foreground: oklch(0.95 0.008 250);
+  --card: oklch(0.203 0.02 260);
+  --card-foreground: oklch(0.95 0.008 250);
+  --popover: oklch(0.203 0.02 260);
+  --popover-foreground: oklch(0.95 0.008 250);
+  --primary: oklch(0.8 0.14 78);
+  --primary-foreground: oklch(0.2 0.03 70);
+  --primary-glow: oklch(0.88 0.11 92);
+  --secondary: oklch(0.26 0.024 260);
+  --secondary-foreground: oklch(0.95 0.008 250);
+  --muted: oklch(0.24 0.02 260);
+  --muted-foreground: oklch(0.7 0.018 258);
+  --accent: oklch(0.7 0.1 200);
+  --accent-foreground: oklch(0.16 0.018 260);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.8 0.14 78);
+
+  --gradient-halo: radial-gradient(
+    circle at 50% 45%,
+    color-mix(in oklab, var(--primary) 22%, transparent),
+    transparent 62%
+  );
+  --gradient-ink: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--primary) 96%, white),
+    var(--accent)
+  );
+  --shadow-elegant: 0 24px 60px -24px oklch(0 0 0 / 0.7);
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 40%, transparent),
+    0 0 34px -6px color-mix(in oklab, var(--primary) 55%, transparent);
+  --transition-smooth: 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--primary) 40%, transparent);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility text-gradient {
+  background: var(--gradient-ink);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility halo {
+  background-image: var(--gradient-halo);
+}
+
+@utility surface {
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-elegant);
+}
+
+@utility spiral-node {
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    background-color var(--transition-smooth),
+    color var(--transition-smooth);
+}
+
+@utility fade-up {
+  animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility spin-slow {
+  animation: spin-slow 90s linear infinite;
+}
+
+/* Light theme */
+.light {
+  --background: oklch(0.975 0.008 85);
+  --foreground: oklch(0.22 0.02 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.02 260);
+  --primary: oklch(0.62 0.14 62);
+  --primary-foreground: oklch(0.99 0.01 90);
+  --primary-glow: oklch(0.74 0.13 78);
+  --secondary: oklch(0.94 0.012 85);
+  --secondary-foreground: oklch(0.24 0.02 260);
+  --muted: oklch(0.94 0.012 85);
+  --muted-foreground: oklch(0.48 0.02 262);
+  --accent: oklch(0.55 0.09 210);
+  --accent-foreground: oklch(0.99 0 0);
+  --border: oklch(0.22 0.02 260 / 12%);
+  --input: oklch(0.22 0.02 260 / 16%);
+  --ring: oklch(0.62 0.14 62);
+  --shadow-elegant: 0 24px 60px -30px oklch(0.3 0.04 260 / 0.35);
+  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
+    0 0 26px -10px color-mix(in oklab, var(--primary) 60%, transparent);
+}
+
+/* Print / PDF export */
+@media print {
+  :root,
+  .light,
+  .dark {
+    --background: #ffffff;
+    --foreground: #14171f;
+    --card: #ffffff;
+    --card-foreground: #14171f;
+    --primary: #9a6510;
+    --primary-foreground: #ffffff;
+    --secondary: #f2f2f0;
+    --secondary-foreground: #14171f;
+    --muted: #f2f2f0;
+    --muted-foreground: #4a4f5a;
+    --accent: #2f5f7a;
+    --border: rgba(20, 23, 31, 0.18);
+    --shadow-elegant: none;
+    --shadow-glow: none;
+    --gradient-halo: none;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .halo {
+    display: none !important;
+  }
+
+  .surface {
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .text-gradient {
+    background: none !important;
+    color: var(--foreground) !important;
+    -webkit-text-fill-color: var(--foreground) !important;
+  }
+
+  main {
+    overflow: visible !important;
+    min-height: 0 !important;
+  }
+
+  #experience ol > li:first-child {
+    break-before: avoid;
+  }
+
+  section {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+
+  header {
+    padding-top: 0 !important;
+  }
+
+  li,
+  article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  @page {
+    margin: 14mm;
+    size: A4;
+  }
+}
