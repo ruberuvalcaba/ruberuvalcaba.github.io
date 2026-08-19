@@ -79,7 +79,7 @@ export default function App() {
             style={{ boxShadow: "var(--shadow-glow)" }}
           >
             <Mail className="size-4" />
-            {profile.email}
+            Let's build something
           </a>
 
           <a

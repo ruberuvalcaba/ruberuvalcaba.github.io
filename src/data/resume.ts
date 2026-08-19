@@ -1,4 +1,11 @@
-export const tracks = ["Frontend", "Architecture", "Platform"] as const;
+export const tracks = [
+  "Architecture",
+  "Performance",
+  "Design Systems",
+  "Modernization",
+  "Developer Experience",
+  "Technical Leadership",
+] as const;
 export type Track = (typeof tracks)[number];
 
 export type Role = {
@@ -23,13 +30,13 @@ export const profile = {
   name: "Ruben F. Ruvalcaba",
   role: "Senior Frontend Engineer",
   location: "New York, NY",
-  phone: "+1 929 620 7962",
-  email: "ruberuvalcaba@gmail.com",
+  email: "ruben.flores.ruvalcaba@gmail.com",
   linkedin: "https://linkedin.com/in/ruberuvalcaba",
   github: "https://github.com/ruberuvalcaba",
   summary:
     "Hi, I'm a Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing web applications. I improve frontend performance, design scalable frontend architectures, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
-  expertise: "Frontend Engineering | Architecture & Performance | UX Engineering, Design Systems & Component Libraries | Technical Leadership & Mentorship",
+  expertise:
+    "Frontend Engineering | Architecture & Performance | UX Engineering, Design Systems & Component Libraries | Technical Leadership & Mentorship",
 };
 
 export const stats = [
@@ -70,7 +77,13 @@ export const logos: Logos[] = [
 export const roles: Role[] = [
   {
     id: "citi",
-    tracks: ["Architecture", "Frontend", "Platform"],
+    tracks: [
+      "Architecture",
+      "Performance",
+      "Modernization",
+      "Developer Experience",
+      "Technical Leadership",
+    ],
     company: "Citigroup",
     title: "Senior Frontend Engineer",
     location: "New York, NY",
@@ -78,53 +91,76 @@ export const roles: Role[] = [
     years: "2023",
     highlights: [
       "Accelerated feature delivery by 40% for a team of 20+ engineers by architecting a React + Storybook atomic component library as part of the organization's frontend innovation strategy.",
-      "Enhanced frontend performance by 50% and cut page loads from 9s to 2s through large-scale React modernization and state architecture standardization.",
-      "Reduced client-side complexity by 20% by defining frontend-driven REST API contracts with backend teams.",
-      "Reduced production regressions by 15% by implementing ESLint, Prettier and Vitest quality gates in CI/CD.",
-      "Improved platform scalability and stability by 25% by mentoring 10+ engineers through code reviews and architecture guidance.",
-      "Led frontend architecture strategy across 5+ large React platforms.",
+      "Improved frontend performance by 50%, reducing page loads from 9s to 2s through large-scale React modernization and standardized state architecture.",
+      "Reduced production regressions by 15% by introducing ESLint, Prettier, and Vitest quality gates across CI/CD.",
+      "Improved platform scalability and stability by 25% through frontend architecture leadership, API contract design, and mentoring 10+ engineers.",
     ],
-    stack: ["React", "TypeScript", "Storybook", "Vitest", "CI/CD"],
+    stack: [
+      "React",
+      "TypeScript",
+      "Storybook",
+      "Vite",
+      "Vitest",
+      "Figma",
+      "REST APIs",
+      "GraphQL",
+      "GitHub Copilot",
+    ],
   },
   {
     id: "wbd",
-    tracks: ["Platform", "Architecture", "Frontend"],
+    tracks: [
+      "Architecture",
+      "Performance",
+      "Design Systems",
+      "Developer Experience",
+    ],
     company: "Warner Bros. Discovery",
     title: "Senior Frontend Engineer",
     period: "May 2019 — Oct 2023",
     years: "2019",
     highlights: [
-      "Increased development efficiency by 40% and brand consistency by 90% through a React + TypeScript Storybook design system adopted across 3 major media brands.",
-      "Upgraded deployments from 30 min to 7 min by re-architecting the platform into isolated micro-frontends with Module Federation and AWS Amplify, raising deploy success from 22% to ~100%.",
-      "Enabled publishing workflows for 8+ global media brands serving 100M+ users via a React + TypeScript CMS integrated with DynamoDB.",
-      "Increased user engagement by 25% by modernizing the official 2020 Shark Week websites for Discovery Channel.",
-      "Accelerated onboarding for junior engineers through mentorship, documentation and knowledge sharing.",
+      "Increased development efficiency by 40% and brand consistency by 90% by building a React + TypeScript Storybook design system adopted across 3 major media brands.",
+      "Reduced deployment time from 30 min to 7 min and increased deploy success from 22% to ~100% by re-architecting the platform into isolated micro-frontends using Module Federation and AWS Amplify.",
+      "Enabled publishing across 8+ global media brands serving 100M+ users by building a React + TypeScript CMS integrated with DynamoDB.",
+      "Increased user engagement by 25% by modernizing Discovery Channel's official 2020 Shark Week websites.",
     ],
     stack: [
+      "React",
+      "TypeScript",
+      "Storybook",
+      "Webpack",
+      "Jest",
       "Micro-frontends",
       "Module Federation",
       "AWS",
       "DynamoDB",
-      "Design Systems",
+      "Agile",
+      "Figma",
+      "Node.js",
     ],
   },
   {
     id: "epam-sr",
-    tracks: ["Architecture", "Frontend"],
+    tracks: [
+      "Architecture",
+      "Performance",
+      "Modernization",
+      "Developer Experience",
+    ],
     company: "EPAM Systems",
     title: "Senior Software Engineer",
     period: "Jan 2018 — May 2019",
     years: "2018",
     highlights: [
-      "Refined maintainability by establishing reusable React component patterns, Redux architecture standards and Jest practices across a 6-engineer team.",
-      "Accelerated delivery of scheduling workflows on a React/Node.js flight scheduling platform through cross-functional collaboration.",
-      "Increased engineering consistency by 60% and code quality by 50% with frontend architecture standards.",
+      "Improved engineering consistency by 60% and code quality by 50% by defining frontend architecture standards, reusable React patterns, Redux conventions, and Jest practices across a 6-engineer team.",
+      "Accelerated flight scheduling workflows on a React/Node.js platform by partnering with product and backend teams to streamline delivery.",
     ],
     stack: ["React", "Redux", "Node.js", "Jest"],
   },
   {
     id: "epam-swe",
-    tracks: ["Frontend"],
+    tracks: ["Performance", "Modernization", "Developer Experience"],
     company: "EPAM Systems",
     title: "Software Engineer",
     period: "Nov 2016 — Jan 2018",
@@ -138,7 +174,12 @@ export const roles: Role[] = [
   },
   {
     id: "tcs",
-    tracks: ["Frontend"],
+    tracks: [
+      "Performance",
+      "Modernization",
+      "Developer Experience",
+      "Technical Leadership",
+    ],
     company: "TATA Consultancy Services",
     title: "Frontend Developer",
     period: "Apr 2015 — Nov 2016",
@@ -152,7 +193,7 @@ export const roles: Role[] = [
   },
   {
     id: "softtek",
-    tracks: ["Frontend"],
+    tracks: ["Performance", "Modernization", "Developer Experience"],
     company: "Softtek",
     title: "Web Developer",
     period: "Jul 2013 — Apr 2015",
