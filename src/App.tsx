@@ -11,13 +11,7 @@ import {
 
 import { SpiralExperience } from "@/components/SpiralExperience";
 import { useTheme } from "@/hooks/use-theme";
-import {
-  profile,
-  stats,
-  skillGroups,
-  education,
-  roles,
-} from "@/data/resume";
+import { profile, stats, skillGroups, education, roles } from "@/data/resume";
 
 function Section({
   id,
@@ -31,18 +25,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section
-      id={id}
-      className="mx-auto w-full max-w-6xl px-6 py-20 sm:py-24"
-    >
+    <section id={id} className="mx-auto w-full max-w-6xl px-6 py-20 sm:py-24">
       <header className="mb-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
           {label}
         </p>
 
-        <h2 className="mt-3 font-display text-4xl sm:text-5xl">
-          {title}
-        </h2>
+        <h2 className="mt-3 font-display text-4xl sm:text-5xl">{title}</h2>
       </header>
 
       {children}
@@ -62,9 +51,7 @@ export default function App() {
         <button
           type="button"
           onClick={toggle}
-          aria-label={`Switch to ${
-            theme === "dark" ? "light" : "dark"
-          } theme`}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
         >
           {theme === "dark" ? (
@@ -142,17 +129,12 @@ export default function App() {
             {profile.phone}
           </span>
 
-          <span>
-            Work authorization: {profile.authorization}
-          </span>
+          <span>Work authorization: {profile.authorization}</span>
         </div>
 
         <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
           {stats.map((s) => (
-            <div
-              key={s.label}
-              className="bg-card px-5 py-6"
-            >
+            <div key={s.label} className="bg-card px-5 py-6">
               <dt className="font-display text-3xl text-gradient sm:text-4xl">
                 {s.value}
               </dt>
@@ -218,20 +200,11 @@ export default function App() {
       </Section>
 
       {/* Skills */}
-      <Section
-        id="skills"
-        label="Skills"
-        title="Core competencies"
-      >
+      <Section id="skills" label="Skills" title="Core competencies">
         <div className="grid gap-6 md:grid-cols-3">
           {skillGroups.map((group) => (
-            <div
-              key={group.title}
-              className="surface rounded-2xl p-6"
-            >
-              <h3 className="font-display text-2xl">
-                {group.title}
-              </h3>
+            <div key={group.title} className="surface rounded-2xl p-6">
+              <h3 className="font-display text-2xl">{group.title}</h3>
 
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
@@ -249,11 +222,7 @@ export default function App() {
       </Section>
 
       {/* Education */}
-      <Section
-        id="education"
-        label="Education"
-        title="Foundations"
-      >
+      <Section id="education" label="Education" title="Foundations">
         <div className="surface flex flex-wrap items-baseline justify-between gap-4 rounded-2xl p-6 sm:p-8">
           <div>
             <h3 className="font-display text-2xl sm:text-3xl">

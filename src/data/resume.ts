@@ -13,7 +13,6 @@ export type Role = {
   stack: string[];
 };
 
-
 export const profile = {
   name: "Ruben Flores Ruvalcaba",
   role: "Senior Frontend Engineer",
@@ -67,7 +66,13 @@ export const roles: Role[] = [
       "Increased user engagement by 25% by modernizing the official 2020 Shark Week websites for Discovery Channel.",
       "Accelerated onboarding for junior engineers through mentorship, documentation and knowledge sharing.",
     ],
-    stack: ["Micro-frontends", "Module Federation", "AWS", "DynamoDB", "Design Systems"],
+    stack: [
+      "Micro-frontends",
+      "Module Federation",
+      "AWS",
+      "DynamoDB",
+      "Design Systems",
+    ],
   },
   {
     id: "epam-sr",

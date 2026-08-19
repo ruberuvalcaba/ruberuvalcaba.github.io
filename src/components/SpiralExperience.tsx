@@ -1,5 +1,10 @@
 import { useMemo, useState } from "react";
-import { roles, tracks as allTracks, type Role, type Track } from "@/data/resume";
+import {
+  roles,
+  tracks as allTracks,
+  type Role,
+  type Track,
+} from "@/data/resume";
 
 const SIZE = 620;
 const CENTER = SIZE / 2;
@@ -13,7 +18,12 @@ const fullJourney: Role[] = [...roles].reverse();
 function pointAt(i: number) {
   const angle = -Math.PI / 2 + i * STEP_A;
   const r = BASE_R + i * STEP_R;
-  return { x: CENTER + r * Math.cos(angle), y: CENTER + r * Math.sin(angle), angle, r };
+  return {
+    x: CENTER + r * Math.cos(angle),
+    y: CENTER + r * Math.sin(angle),
+    angle,
+    r,
+  };
 }
 
 function spiralPath(count: number) {
@@ -30,7 +40,10 @@ export function SpiralExperience() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const journey = useMemo(
-    () => (filter === "All" ? fullJourney : fullJourney.filter((r) => r.tracks.includes(filter))),
+    () =>
+      filter === "All"
+        ? fullJourney
+        : fullJourney.filter((r) => r.tracks.includes(filter)),
     [filter],
   );
 
@@ -51,7 +64,9 @@ export function SpiralExperience() {
         {(["All", ...allTracks] as const).map((t) => {
           const isOn = filter === t;
           const count =
-            t === "All" ? fullJourney.length : fullJourney.filter((r) => r.tracks.includes(t)).length;
+            t === "All"
+              ? fullJourney.length
+              : fullJourney.filter((r) => r.tracks.includes(t)).length;
           return (
             <button
               key={t}
@@ -83,12 +98,27 @@ export function SpiralExperience() {
             className="absolute inset-0 origin-center [transition:transform_900ms_cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
             style={{ transform: `rotate(${rotation}deg)` }}
           >
-            <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="h-full w-full overflow-visible">
+            <svg
+              viewBox={`0 0 ${SIZE} ${SIZE}`}
+              className="h-full w-full overflow-visible"
+            >
               <defs>
                 <linearGradient id="spiralStroke" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="var(--primary)" stopOpacity="0.15" />
-                  <stop offset="55%" stopColor="var(--primary)" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.85" />
+                  <stop
+                    offset="0%"
+                    stopColor="var(--primary)"
+                    stopOpacity="0.15"
+                  />
+                  <stop
+                    offset="55%"
+                    stopColor="var(--primary)"
+                    stopOpacity="0.55"
+                  />
+                  <stop
+                    offset="100%"
+                    stopColor="var(--accent)"
+                    stopOpacity="0.85"
+                  />
                 </linearGradient>
               </defs>
               {[0.35, 0.62, 0.9].map((s) => (
@@ -122,7 +152,10 @@ export function SpiralExperience() {
                   aria-pressed={isActive}
                   aria-label={`${role.company}, ${role.period}`}
                   className="group absolute -translate-x-1/2 -translate-y-1/2"
-                  style={{ left: `${(x / SIZE) * 100}%`, top: `${(y / SIZE) * 100}%` }}
+                  style={{
+                    left: `${(x / SIZE) * 100}%`,
+                    top: `${(y / SIZE) * 100}%`,
+                  }}
                 >
                   <span
                     className="spiral-node flex items-center gap-2 rounded-full border border-border bg-card/90 p-1.5 backdrop-blur group-hover:pr-3 data-[active=true]:pr-3 data-[active=true]:bg-primary data-[active=true]:text-primary-foreground"
@@ -160,11 +193,16 @@ export function SpiralExperience() {
         </div>
 
         {/* Detail */}
-        <article key={active.id} className="surface fade-up rounded-2xl p-6 sm:p-8">
+        <article
+          key={active.id}
+          className="surface fade-up rounded-2xl p-6 sm:p-8"
+        >
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary">
             {active.period}
           </p>
-          <h3 className="mt-3 font-display text-3xl sm:text-4xl">{active.company}</h3>
+          <h3 className="mt-3 font-display text-3xl sm:text-4xl">
+            {active.company}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">
             {active.title}
             {active.location ? ` · ${active.location}` : ""}
@@ -185,7 +223,10 @@ export function SpiralExperience() {
           </div>
           <ul className="mt-6 space-y-3">
             {active.highlights.map((h) => (
-              <li key={h} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+              <li
+                key={h}
+                className="flex gap-3 text-sm leading-relaxed text-foreground/85"
+              >
                 <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
                 <span>{h}</span>
               </li>
