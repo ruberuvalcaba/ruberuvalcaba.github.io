@@ -13,6 +13,12 @@ export type Role = {
   stack: string[];
 };
 
+export type Logos = {
+  id: string;
+  company: string;
+  src: string;
+};
+
 export const profile = {
   name: "Ruben F. Ruvalcaba",
   role: "Senior Frontend Engineer",
@@ -30,7 +36,35 @@ export const stats = [
   { value: "10+", label: "Years engineering" },
   { value: "100M+", label: "Users reached" },
   { value: "50%", label: "Perf gains delivered" },
-  { value: "20+", label: "Engineers mentored" },
+  { value: "20+", label: "Production Projects" },
+];
+
+export const logos: Logos[] = [
+  {
+    id: "citi",
+    company: "Citigroup",
+    src: "/logos/citi.svg.webp",
+  },
+  {
+    id: "wbd",
+    company: "Warner Bros. Discovery",
+    src: "/logos/wbd.webp",
+  },
+  {
+    id: "epam-sr",
+    company: "EPAM Systems",
+    src: "/logos/epam.webp",
+  },
+  {
+    id: "tcs",
+    company: "TATA Consultancy Services",
+    src: "/logos/tcs.svg.webp",
+  },
+  {
+    id: "softtek",
+    company: "Softtek",
+    src: "/logos/softtek.png",
+  },
 ];
 
 export const roles: Role[] = [

@@ -132,8 +132,7 @@ export default function App() {
         title="The spiral of a decade"
       >
         <p className="no-print -mt-6 mb-10 max-w-xl text-sm text-muted-foreground">
-          Each step outward is a new chapter. Filter by focus, then select a
-          node to unfold the story.
+          Each step outward is a new chapter. Select a node to unfold the story.
         </p>
 
         <div className="print:hidden">

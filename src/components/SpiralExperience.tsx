@@ -2,9 +2,12 @@ import { useMemo, useState } from "react";
 import {
   roles,
   tracks as allTracks,
+  logos,
+  type Logos,
   type Role,
   type Track,
 } from "@/data/resume";
+import { MousePointerClick } from "lucide-react";
 
 const SIZE = 620;
 const CENTER = SIZE / 2;
@@ -13,7 +16,7 @@ const STEP_R = 42;
 const STEP_A = 2.35; // radians between roles
 
 // Oldest at the core, newest at the outer edge.
-const fullJourney: Role[] = [...roles].reverse();
+const journey: Role[] = [...roles].reverse();
 
 function pointAt(i: number) {
   const angle = -Math.PI / 2 + i * STEP_A;
@@ -36,58 +39,73 @@ function spiralPath(count: number) {
 }
 
 export function SpiralExperience() {
-  const [filter, setFilter] = useState<Track | "All">("All");
   const [selectedId, setSelectedId] = useState<string | null>(null);
-
-  const journey = useMemo(
-    () =>
-      filter === "All"
-        ? fullJourney
-        : fullJourney.filter((r) => r.tracks.includes(filter)),
-    [filter],
-  );
 
   const fallback = journey[journey.length - 1]!;
   const activeIndexRaw = journey.findIndex((r) => r.id === selectedId);
   const activeIndex = activeIndexRaw < 0 ? journey.length - 1 : activeIndexRaw;
   const active = journey[activeIndex] ?? fallback;
-  const path = useMemo(() => spiralPath(journey.length), [journey.length]);
+  const path = useMemo(() => spiralPath(journey.length), []);
   const rotation = -(activeIndex * STEP_A * 180) / Math.PI;
 
   return (
     <div className="space-y-8">
       {/* Filters */}
-      <div className="no-print flex flex-wrap items-center gap-2">
-        <span className="mr-1 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-          Filter
-        </span>
-        {(["All", ...allTracks] as const).map((t) => {
-          const isOn = filter === t;
-          const count =
-            t === "All"
-              ? fullJourney.length
-              : fullJourney.filter((r) => r.tracks.includes(t)).length;
-          return (
+      <div className="no-print max-w-xl flex flex-wrap items-center gap-2 justify-between">
+        <div className="flex gap-2">
+          {logos.map((logo: Logos) => (
             <button
-              key={t}
+              key={`logo_${logo.id}`}
               type="button"
-              onClick={() => {
-                setFilter(t);
-                setSelectedId(null);
-              }}
-              aria-pressed={isOn}
-              className={`rounded-full border px-4 py-1.5 text-xs transition-colors ${
-                isOn
-                  ? "border-transparent bg-primary text-primary-foreground"
-                  : "border-border text-muted-foreground hover:bg-secondary"
-              }`}
-              style={isOn ? { boxShadow: "var(--shadow-glow)" } : undefined}
+              onClick={() => setSelectedId(logo.id)}
+              className={`group relative cursor-pointer rounded-full border border-border p-1 text-muted-foreground hover:bg-secondary z-10`}
+              aria-label={logo.company}
             >
-              {t}
-              <span className="ml-2 opacity-60">{count}</span>
+              <img
+                src={logo.src}
+                alt={logo.company}
+                className="size-8 object-contain grayscale contrast-40 brightness-180"
+              />
+              {/* Tooltip */}
+              <span
+                className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-full
+          z-50
+          mt-2
+          -translate-x-1/2
+          whitespace-nowrap
+          rounded-md
+          bg-foreground
+          px-2.5
+          py-1.5
+          text-xs
+          text-background
+          opacity-0
+          transition-opacity
+          duration-200
+          group-hover:opacity-100
+        "
+              >
+                {logo.company}
+              </span>
             </button>
-          );
-        })}
+          ))}
+        </div>
+        {selectedId && selectedId !== fallback?.id && (
+          <button
+            type="button"
+            onClick={() => setSelectedId(null)}
+            className={`rounded-full border px-4 py-1.5 text-xs transition-colors border-border text-muted-foreground hover:bg-secondary cursor-pointer`}
+          >
+            <div className="inline-flex items-center gap-2">
+              <MousePointerClick className="size-4" />
+              {"See Current Role"}
+            </div>
+          </button>
+        )}
       </div>
 
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16">
@@ -151,7 +169,7 @@ export function SpiralExperience() {
                   onClick={() => setSelectedId(role.id)}
                   aria-pressed={isActive}
                   aria-label={`${role.company}, ${role.period}`}
-                  className="group absolute -translate-x-1/2 -translate-y-1/2"
+                  className="group absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                   style={{
                     left: `${(x / SIZE) * 100}%`,
                     top: `${(y / SIZE) * 100}%`,
@@ -211,11 +229,7 @@ export function SpiralExperience() {
             {active.tracks.map((t) => (
               <span
                 key={t}
-                className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-wider ${
-                  filter === t
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border text-muted-foreground"
-                }`}
+                className={`rounded-full px-3 py-1 text-[11px] uppercase tracking-wider border border-border text-muted-foreground`}
               >
                 {t}
               </span>
