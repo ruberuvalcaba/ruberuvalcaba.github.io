@@ -14,7 +14,7 @@ export type Role = {
 };
 
 export const profile = {
-  name: "Ruben Flores Ruvalcaba",
+  name: "Ruben F. Ruvalcaba",
   role: "Senior Frontend Engineer",
   location: "New York, NY",
   phone: "+1 929 620 7962",
@@ -22,8 +22,8 @@ export const profile = {
   linkedin: "https://linkedin.com/in/ruberuvalcaba",
   github: "https://github.com/ruberuvalcaba",
   summary:
-    "Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing React and TypeScript applications. I improve frontend performance, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
-  authorization: "U.S. Permanent Resident",
+    "Hi, I'm a Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing web applications. I improve frontend performance, design scalable frontend architectures, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
+  expertise: "Frontend Engineering | Architecture & Performance | UX Engineering, Design Systems & Component Libraries | Technical Leadership & Mentorship",
 };
 
 export const stats = [
@@ -175,7 +175,7 @@ export const skillGroups = [
 ];
 
 export const education = {
-  school: "Universidad Autónoma de Aguascalientes",
+  school: "U A A",
   degree: "Bachelor's, Computer Science",
   period: "Aug 2010 — Dec 2014",
 };

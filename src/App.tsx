@@ -1,17 +1,9 @@
-import {
-  Download,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  Moon,
-  Phone,
-  Sun,
-} from "lucide-react";
+import { Github, Linkedin, Mail, Star, Moon, Sun } from "lucide-react";
 
 import { SpiralExperience } from "@/components/SpiralExperience";
 import { useTheme } from "@/hooks/use-theme";
 import { profile, stats, skillGroups, education, roles } from "@/data/resume";
+import DownloadResume from "@/components/DownloadResume";
 
 function Section({
   id,
@@ -63,14 +55,7 @@ export default function App() {
           {theme === "dark" ? "Light" : "Dark"}
         </button>
 
-        <button
-          type="button"
-          onClick={() => window.print()}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
-        >
-          <Download className="size-4" />
-          Export PDF
-        </button>
+        <DownloadResume />
       </div>
 
       {/* Hero */}
@@ -118,18 +103,11 @@ export default function App() {
           </a>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="size-3.5" />
-            {profile.location}
-          </span>
-
-          <span className="inline-flex items-center gap-2">
-            <Phone className="size-3.5" />
-            {profile.phone}
-          </span>
-
-          <span>Work authorization: {profile.authorization}</span>
+        <div className="mt-6">
+          <p className="inline-flex items-center flex-wrap gap-x-2 font-mono text-[11px] uppercase tracking-[0.10em] text-muted-foreground">
+            <Star className="size-4" />
+            {profile.expertise}
+          </p>
         </div>
 
         <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
