@@ -37,5 +37,5 @@ export const actionButtons = {
   resume: "Resume",
   about: "About me",
   back: "Back to profile",
-  currentRole: "See current role",
+  currentRole: "Reset",
 };
