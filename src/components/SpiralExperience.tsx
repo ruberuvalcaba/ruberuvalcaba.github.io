@@ -2,11 +2,10 @@ import { useMemo, useState } from "react";
 import {
   roles,
   tracks as allTracks,
-  logos,
-  type Logos,
   type Role,
   type Track,
 } from "@/data/resume";
+import { logos, type Logos, actionButtons } from "@/data/content";
 import { MousePointerClick } from "lucide-react";
 
 const SIZE = 620;
@@ -102,7 +101,7 @@ export function SpiralExperience() {
           >
             <div className="inline-flex items-center gap-2">
               <MousePointerClick className="size-4" />
-              {"See Current Role"}
+              {actionButtons.currentRole}
             </div>
           </button>
         )}

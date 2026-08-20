@@ -1,5 +1,6 @@
 import React from "react";
 import { Download } from "lucide-react";
+import { actionButtons } from "@/data/content";
 
 const DownloadResume: React.FC = () => {
   const downloadResume = () => {
@@ -15,10 +16,10 @@ const DownloadResume: React.FC = () => {
     <button
       type="button"
       onClick={downloadResume}
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
+      className="inline-flex items-center gap-2 rounded-full border border-border cursor-pointer bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
     >
       <Download className="size-4" />
-      Download Resume PDF
+      {actionButtons.resume}
     </button>
   );
 };

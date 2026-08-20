@@ -1,8 +1,10 @@
-import { Github, Linkedin, Mail, Star, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, Mail, Star, Moon, Sun, User } from "lucide-react";
 
 import { SpiralExperience } from "@/components/SpiralExperience";
 import { useTheme } from "@/hooks/use-theme";
 import { profile, stats, skillGroups, education, roles } from "@/data/resume";
+import { actionButtons } from "@/data/content";
+import { Link } from "react-router-dom";
 import DownloadResume from "@/components/DownloadResume";
 
 function Section({
@@ -33,6 +35,7 @@ function Section({
 
 export default function App() {
   const { theme, toggle } = useTheme();
+  const foundations = education?.[0] || { school: "", degree: "", period: "" };
 
   return (
     <main className="relative min-h-screen overflow-hidden">
@@ -44,7 +47,7 @@ export default function App() {
           type="button"
           onClick={toggle}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-          className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
+          className="inline-flex items-center gap-2 rounded-full border border-border cursor-pointer bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
         >
           {theme === "dark" ? (
             <Sun className="size-4" />
@@ -54,6 +57,12 @@ export default function App() {
 
           {theme === "dark" ? "Light" : "Dark"}
         </button>
+        <Link
+          to="/about"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
+        >
+          <User className="size-4" /> {actionButtons.about}
+        </Link>
 
         <DownloadResume />
       </div>
@@ -79,7 +88,7 @@ export default function App() {
             style={{ boxShadow: "var(--shadow-glow)" }}
           >
             <Mail className="size-4" />
-            Let's build something
+            {actionButtons.email}
           </a>
 
           <a
@@ -203,16 +212,16 @@ export default function App() {
         <div className="surface flex flex-wrap items-baseline justify-between gap-4 rounded-2xl p-6 sm:p-8">
           <div>
             <h3 className="font-display text-2xl sm:text-3xl">
-              {education.school}
+              {foundations.school}
             </h3>
 
             <p className="mt-1 text-sm text-muted-foreground">
-              {education.degree}
+              {foundations.degree}
             </p>
           </div>
 
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">
-            {education.period}
+            {foundations.period}
           </p>
         </div>
       </Section>
@@ -228,7 +237,7 @@ export default function App() {
             href={`mailto:${profile.email}`}
             className="text-primary hover:underline"
           >
-            Let's build something
+            {actionButtons.email}
           </a>
         </div>
       </footer>

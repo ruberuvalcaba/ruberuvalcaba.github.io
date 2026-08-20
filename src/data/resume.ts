@@ -20,12 +20,6 @@ export type Role = {
   stack: string[];
 };
 
-export type Logos = {
-  id: string;
-  company: string;
-  src: string;
-};
-
 export const profile = {
   name: "Ruben F. Ruvalcaba",
   role: "Senior Frontend Engineer",
@@ -33,6 +27,7 @@ export const profile = {
   email: "ruben.flores.ruvalcaba@gmail.com",
   linkedin: "https://linkedin.com/in/ruberuvalcaba",
   github: "https://github.com/ruberuvalcaba",
+  authorization: "U.S. Permanent Resident",
   summary:
     "Hi, I'm a Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing web applications. I improve frontend performance, design scalable frontend architectures, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
   expertise:
@@ -44,34 +39,6 @@ export const stats = [
   { value: "100M+", label: "Users reached" },
   { value: "50%", label: "Perf gains delivered" },
   { value: "20+", label: "Production Projects" },
-];
-
-export const logos: Logos[] = [
-  {
-    id: "citi",
-    company: "Citigroup",
-    src: "/logos/citi.svg.webp",
-  },
-  {
-    id: "wbd",
-    company: "Warner Bros. Discovery",
-    src: "/logos/wbd.webp",
-  },
-  {
-    id: "epam-sr",
-    company: "EPAM Systems",
-    src: "/logos/epam.webp",
-  },
-  {
-    id: "tcs",
-    company: "TATA Consultancy Services",
-    src: "/logos/tcs.svg.webp",
-  },
-  {
-    id: "softtek",
-    company: "Softtek",
-    src: "/logos/softtek.png",
-  },
 ];
 
 export const roles: Role[] = [
@@ -249,8 +216,20 @@ export const skillGroups = [
   },
 ];
 
-export const education = {
-  school: "U A A",
-  degree: "Bachelor's, Computer Science",
-  period: "Aug 2010 — Dec 2014",
-};
+export const education = [
+  {
+    school: "U A A",
+    degree: "Bachelor's, Computer Science",
+    period: "Aug 2010 — Dec 2014",
+  },
+  {
+    school: "CAAV University of Audiovisual Media",
+    degree: "Certificate in Short Film Production & Street Photography",
+    period: "2017 — 2019",
+  },
+  {
+    school: "The Art Students League of New York",
+    degree: "Oil and Acrylic Painting",
+    period: "2022 — current",
+  },
+];
