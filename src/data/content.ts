@@ -34,8 +34,8 @@ export const logos: Logos[] = [
 
 export const actionButtons = {
   email: `Let's build something`,
-  resume: "Download resume",
-  about: "More about me",
+  resume: "Resume",
+  about: "About me",
   back: "Back to profile",
   currentRole: "See current role",
 };

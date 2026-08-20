@@ -31,7 +31,7 @@ export const profile = {
   summary:
     "Hi, I'm a Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing web applications. I improve frontend performance, design scalable frontend architectures, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
   expertise:
-    "Frontend Engineering | Architecture & Performance | UX Engineering, Design Systems & Component Libraries | Technical Leadership & Mentorship",
+    "Frontend Engineering, Architecture & Performance, UX Engineering, Design Systems & Component Libraries, Technical Leadership & Mentorship",
 };
 
 export const stats = [

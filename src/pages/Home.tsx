@@ -19,7 +19,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-6 py-20 sm:py-24">
+    <section id={id} className="mx-auto w-full max-w-6xl px-6 pt-20 sm:py-24">
       <header className="mb-10">
         <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
           {label}
@@ -69,7 +69,7 @@ export default function App() {
 
       {/* Hero */}
       <header className="relative mx-auto w-full max-w-6xl px-6 pb-8 pt-12 sm:pt-16">
-        <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-muted-foreground">
+        <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
           {profile.role} · {profile.location}
         </p>
 
@@ -98,7 +98,6 @@ export default function App() {
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-secondary"
           >
             <Linkedin className="size-4" />
-            LinkedIn
           </a>
 
           <a
@@ -108,13 +107,11 @@ export default function App() {
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-secondary"
           >
             <Github className="size-4" />
-            GitHub
           </a>
         </div>
 
         <div className="mt-6">
-          <p className="inline-flex items-center flex-wrap gap-x-2 font-mono text-[11px] uppercase tracking-[0.10em] text-muted-foreground">
-            <Star className="size-4" />
+          <p className="inline-flex text-center flex-wrap items-center gap-x-2 font-mono text-[11px] uppercase tracking-[0.11em] text-muted-foreground">
             {profile.expertise}
           </p>
         </div>

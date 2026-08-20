@@ -54,7 +54,7 @@ const About = () => {
         <h1 className="mt-3 font-display text-5xl leading-[1.05] sm:text-6xl">
           <span className="text-gradient">{content.title}</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
           {content.intro}
         </p>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -108,7 +108,7 @@ const About = () => {
           <h2 className="mt-3 font-display text-3xl sm:text-4xl">
             {nextSteps.title}
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             {nextSteps.body}
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
