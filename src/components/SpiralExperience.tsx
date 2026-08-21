@@ -59,7 +59,8 @@ export function SpiralExperience() {
               onClick={() => setSelectedId(logo.id)}
               className={`group relative cursor-pointer rounded-full border border-border p-1 text-muted-foreground hover:bg-secondary z-10`}
               aria-label={logo.company}
-              data-umami-event={`${logo.company} click`}
+              data-umami-event="Experience selected from logo"
+              data-umami-event-company={logo.company}
             >
               <img
                 src={logo.src}
@@ -171,6 +172,8 @@ export function SpiralExperience() {
                   aria-pressed={isActive}
                   aria-label={`${role.company}, ${role.period}`}
                   className="group absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                  data-umami-event="Experience selected from spiral"
+                  data-umami-event-company={role.company}
                   style={{
                     left: `${(x / SIZE) * 100}%`,
                     top: `${(y / SIZE) * 100}%`,
