@@ -43,12 +43,19 @@ const About = () => {
       <div className="mx-auto w-full max-w-4xl px-6 pb-24 pt-12 sm:pt-16">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs transition-colors hover:bg-secondary"
+          className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs transition-colors   
+          
+          fixed z-50
+     font-medium
+    backdrop-blur-md
+    transition-all duration-200
+    hover:-translate-y-0.5
+    hover:bg-secondary"
         >
           <ArrowLeft className="size-4" /> {actionButtons.back}
         </Link>
 
-        <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
+        <p className="mt-10 pt-10 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
           More about me
         </p>
         <h1 className="mt-3 font-display text-5xl leading-[1.05] sm:text-6xl">

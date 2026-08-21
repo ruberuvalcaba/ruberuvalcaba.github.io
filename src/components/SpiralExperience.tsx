@@ -57,7 +57,7 @@ export function SpiralExperience() {
               key={`logo_${logo.id}`}
               type="button"
               onClick={() => setSelectedId(logo.id)}
-              className={`group relative cursor-pointer rounded-full border border-border p-1 text-muted-foreground hover:bg-secondary z-10`}
+              className="group relative cursor-pointer rounded-full border border-border p-1 text-muted-foreground hover:bg-secondary z-10 hover:-translate-y-0.5"
               aria-label={logo.company}
               data-umami-event="Experience selected from logo"
               data-umami-event-company={logo.company}
