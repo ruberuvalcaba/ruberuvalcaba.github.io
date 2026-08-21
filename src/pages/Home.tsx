@@ -60,6 +60,7 @@ export default function App() {
         <Link
           to="/about"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
+          data-umami-event="About click"
         >
           <User className="size-4" /> {actionButtons.about}
         </Link>
@@ -86,6 +87,7 @@ export default function App() {
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5"
             style={{ boxShadow: "var(--shadow-glow)" }}
+            data-umami-event="Email click"
           >
             <Mail className="size-4" />
             {actionButtons.email}
@@ -96,6 +98,7 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-secondary"
+            data-umami-event="LinkedIn click"
           >
             <Linkedin className="size-4" />
           </a>
@@ -105,6 +108,7 @@ export default function App() {
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition-colors hover:bg-secondary"
+            data-umami-event="GitHub click"
           >
             <Github className="size-4" />
           </a>
@@ -233,6 +237,7 @@ export default function App() {
           <a
             href={`mailto:${profile.email}`}
             className="text-primary hover:underline"
+            data-umami-event="Email click"
           >
             {actionButtons.email}
           </a>

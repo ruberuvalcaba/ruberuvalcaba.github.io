@@ -17,6 +17,7 @@ const DownloadResume: React.FC = () => {
       type="button"
       onClick={downloadResume}
       className="inline-flex items-center gap-2 rounded-full border border-border cursor-pointer bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
+      data-umami-event="Resume download"
     >
       <Download className="size-4" />
       {actionButtons.resume}

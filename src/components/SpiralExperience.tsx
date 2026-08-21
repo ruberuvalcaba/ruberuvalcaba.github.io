@@ -59,6 +59,7 @@ export function SpiralExperience() {
               onClick={() => setSelectedId(logo.id)}
               className={`group relative cursor-pointer rounded-full border border-border p-1 text-muted-foreground hover:bg-secondary z-10`}
               aria-label={logo.company}
+              data-umami-event={`${logo.company} click`}
             >
               <img
                 src={logo.src}
@@ -98,6 +99,7 @@ export function SpiralExperience() {
             type="button"
             onClick={() => setSelectedId(null)}
             className={`rounded-full border px-4 py-1.5 text-xs transition-colors border-border text-muted-foreground hover:bg-secondary cursor-pointer`}
+            data-umami-event="Current role click"
           >
             <div className="inline-flex items-center gap-2">
               <MousePointerClick className="size-4" />
