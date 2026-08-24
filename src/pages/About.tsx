@@ -3,6 +3,7 @@ import { ArrowLeft, Mail } from "lucide-react";
 import { profile, education } from "@/data/resume";
 import { actionButtons } from "@/data/content";
 import { Link } from "react-router-dom";
+import ThemeToggleButton from "@/components/ui/ThemeToggleButton";
 
 const content = {
   title: "Beyond the résumé",
@@ -41,19 +42,21 @@ const About = () => {
       <div className="halo pointer-events-none absolute inset-x-0 -top-40 h-[720px] opacity-60" />
 
       <div className="mx-auto w-full max-w-4xl px-6 pb-24 pt-12 sm:pt-16">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs transition-colors   
-          
-          fixed z-50
-     font-medium
-    backdrop-blur-md
-    transition-all duration-200
-    hover:-translate-y-0.5
-    hover:bg-secondary"
-        >
-          <ArrowLeft className="size-4" /> {actionButtons.back}
-        </Link>
+        <div className="inline-flex items-center justify-between w-full max-w-4xl">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-xs transition-colors   
+            fixed z-50
+          font-medium
+          backdrop-blur-md
+          transition-all duration-200
+          hover:-translate-y-0.5
+          hover:bg-secondary"
+          >
+            <ArrowLeft className="size-4" /> {actionButtons.back}
+          </Link>
+          <ThemeToggleButton className="ml-auto justify-end" />
+        </div>
 
         <p className="mt-10 pt-10 font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
           More about me

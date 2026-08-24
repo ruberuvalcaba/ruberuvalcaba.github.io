@@ -1,11 +1,11 @@
 import { Github, Linkedin, Mail, Star, Moon, Sun, User } from "lucide-react";
 
 import { SpiralExperience } from "@/components/SpiralExperience";
-import { useTheme } from "@/hooks/use-theme";
 import { profile, stats, skillGroups, education, roles } from "@/data/resume";
 import { actionButtons } from "@/data/content";
 import { Link } from "react-router-dom";
 import DownloadResume from "@/components/DownloadResume";
+import ThemeToggleButton from "@/components/ui/ThemeToggleButton";
 
 function Section({
   id,
@@ -34,7 +34,6 @@ function Section({
 }
 
 export default function App() {
-  const { theme, toggle } = useTheme();
   const foundations = education?.[0] || { school: "", degree: "", period: "" };
 
   return (
@@ -43,20 +42,7 @@ export default function App() {
 
       {/* Toolbar */}
       <div className="no-print sticky top-0 z-30 mx-auto flex w-full max-w-6xl justify-end gap-2 px-6 pt-6">
-        <button
-          type="button"
-          onClick={toggle}
-          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-          className="inline-flex items-center gap-2 rounded-full border border-border cursor-pointer bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
-        >
-          {theme === "dark" ? (
-            <Sun className="size-4" />
-          ) : (
-            <Moon className="size-4" />
-          )}
-
-          {theme === "dark" ? "Light" : "Dark"}
-        </button>
+        <ThemeToggleButton />
         <Link
           to="/about"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 text-xs backdrop-blur transition-colors hover:bg-secondary"
