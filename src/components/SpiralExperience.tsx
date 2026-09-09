@@ -225,11 +225,15 @@ export function SpiralExperience() {
           <h3 className="mt-3 font-display text-3xl sm:text-4xl">
             {active.company}
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground border-b pb-6">
+            {active.project}
+          </p>
+
+          <p className="text-sm text-muted-foreground font-mono text-primary">
             {active.title}
             {active.location ? ` · ${active.location}` : ""}
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
+          {/* <div className="mt-4 flex flex-wrap gap-2">
             {active.tracks.map((t) => (
               <span
                 key={t}
@@ -238,19 +242,19 @@ export function SpiralExperience() {
                 {t}
               </span>
             ))}
-          </div>
+          </div> */}
           <ul className="mt-6 space-y-3">
             {active.highlights.map((h) => (
               <li
                 key={h}
                 className="flex gap-3 text-sm leading-relaxed text-foreground/85"
               >
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gray-300" />
                 <span>{h}</span>
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex flex-wrap gap-2">
+          {/* <div className="mt-6 flex flex-wrap gap-2">
             {active.stack.map((s) => (
               <span
                 key={s}
@@ -259,7 +263,7 @@ export function SpiralExperience() {
                 {s}
               </span>
             ))}
-          </div>
+          </div> */}
         </article>
       </div>
     </div>

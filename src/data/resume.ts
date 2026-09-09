@@ -12,6 +12,7 @@ export type Role = {
   id: string;
   company: string;
   title: string;
+  project?: string;
   location?: string;
   period: string;
   years: string;
@@ -28,8 +29,9 @@ export const profile = {
   linkedin: "https://linkedin.com/in/ruberuvalcaba",
   github: "https://github.com/ruberuvalcaba",
   authorization: "U.S. Permanent Resident",
+  // "Hi, I'm your next Senior Frontend Engineer. I build scalable, high-performing web applications, reusable component libraries, design systems, and modern interfaces for enterprise and customer-facing products serving millions of users.",
   summary:
-    "Hi, I'm a Senior Frontend Engineer with 10+ years building enterprise-scale and customer-facing web applications. I improve frontend performance, design scalable frontend architectures, craft reusable component libraries, and ship modern interfaces for products serving millions of users.",
+    "Hi, I'm Ruben. I build the frontend foundations that help teams ship better products, scalable architecture, high-performance interfaces, and reusable design systems.",
   expertise:
     "Frontend Engineering, Architecture & Performance, UX Engineering, Design Systems & Component Libraries, Technical Leadership & Mentorship",
 };
@@ -51,16 +53,17 @@ export const roles: Role[] = [
       "Developer Experience",
       "Technical Leadership",
     ],
-    company: "Citigroup",
+    company: "Citi",
     title: "Senior Frontend Engineer",
-    location: "New York, NY",
+    project: "Enterprise Risk Technology",
     period: "Oct 2023 — Jun 2026",
     years: "2023",
     highlights: [
-      "Accelerated feature delivery by 40% for a team of 20+ engineers by architecting a React + Storybook atomic component library as part of the organization's frontend innovation strategy.",
-      "Improved frontend performance by 50%, reducing page loads from 9s to 2s through large-scale React modernization and standardized state architecture.",
-      "Reduced production regressions by 15% by introducing ESLint, Prettier, and Vitest quality gates across CI/CD.",
-      "Improved platform scalability and stability by 25% through frontend architecture leadership, API contract design, and mentoring 10+ engineers.",
+      "Architected an atomic component library supporting the organization’s frontend innovation strategy.",
+      "Launched a system for regulatory capital calculations, reporting, and risk planning.",
+      "Standardized UX, frontend patterns, development processes, and code quality.",
+      "Led development of a B2B workflow system for market risk limit sign-offs.",
+      "Modernized legacy frontends through React migrations.",
     ],
     stack: [
       "React",
@@ -84,13 +87,14 @@ export const roles: Role[] = [
     ],
     company: "Warner Bros. Discovery",
     title: "Senior Frontend Engineer",
+    project: "Discovery Channel, Food Network and Travel channel",
     period: "May 2019 — Oct 2023",
     years: "2019",
     highlights: [
-      "Increased development efficiency by 40% and brand consistency by 90% by building a React + TypeScript Storybook design system adopted across 3 major media brands.",
-      "Reduced deployment time from 30 min to 7 min and increased deploy success from 22% to ~100% by re-architecting the platform into isolated micro-frontends using Module Federation and AWS Amplify.",
-      "Enabled publishing across 8+ global media brands serving 100M+ users by building a React + TypeScript CMS integrated with DynamoDB.",
-      "Increased user engagement by 25% by modernizing Discovery Channel's official 2020 Shark Week websites.",
+      "Launched a CMS to support live-streaming classes for Cooking Channel.",
+      "Translated Figma designs into an atomic design system used by 8+ brands.",
+      "Modernized Discovery Channel's official 2020 Shark Week websites.",
+      "Supported the integration and modernization of Scripps Networks Interactive into Discovery Inc.",
     ],
     stack: [
       "React",
@@ -105,7 +109,7 @@ export const roles: Role[] = [
       "Agile",
       "Figma",
       "Node.js",
-    ],
+    ], //Not displaying
   },
   {
     id: "epam-sr",
@@ -117,27 +121,15 @@ export const roles: Role[] = [
     ],
     company: "EPAM Systems",
     title: "Senior Software Engineer",
-    period: "Jan 2018 — May 2019",
-    years: "2018",
-    highlights: [
-      "Improved engineering consistency by 60% and code quality by 50% by defining frontend architecture standards, reusable React patterns, Redux conventions, and Jest practices across a 6-engineer team.",
-      "Accelerated flight scheduling workflows on a React/Node.js platform by partnering with product and backend teams to streamline delivery.",
-    ],
-    stack: ["React", "Redux", "Node.js", "Jest"],
-  },
-  {
-    id: "epam-swe",
-    tracks: ["Performance", "Modernization", "Developer Experience"],
-    company: "EPAM Systems",
-    title: "Software Engineer",
-    period: "Nov 2016 — Jan 2018",
+    project: "Travel & Hospitality",
+    period: "Nov 2016 — May 2019",
     years: "2016",
     highlights: [
-      'Earned "Extra Mile" recognition delivering production-ready features for the HomeAway platform using React and unit testing.',
-      "Expanded expertise in ES6, Angular 2+, DevOps and automated testing through an intensive Google-led engineering program.",
-      "Enhanced cross-team collaboration and Agile delivery through workshops and Toastmasters participation.",
+      "Prototyped Altitude Pairing, an aviation workforce management app for kronos.",
+      "Contributed to HomeAway's vacation rental marketplace serving 190 countries.",
+      "Strengthened software engineering expertise through a Google-led engineering program.",
     ],
-    stack: ["React", "Angular 2+", "ES6", "DevOps"],
+    stack: ["React", "Redux", "Node.js", "Jest"], //Not displaying
   },
   {
     id: "tcs",
@@ -149,28 +141,29 @@ export const roles: Role[] = [
     ],
     company: "TATA Consultancy Services",
     title: "Frontend Developer",
+    project: "Banking & Insurance",
     period: "Apr 2015 — Nov 2016",
     years: "2015",
     highlights: [
-      "Improved page load performance by 20% through CSS refactoring, asset optimization and responsive enhancements for USAA's banking platform.",
-      "Enhanced experience for 10M+ users with accessible (WCAG AA) responsive UI components across 3 major browsers.",
-      "Modernized mobile-first banking interfaces, improving performance, accessibility and responsiveness.",
+      "Improved accessibility and responsiveness across USAA's banking platforms.",
+      "Built WCAG AA-compliant UI for 10M+ users.",
+      "Modernized mobile-first interfaces for performance and usability.",
     ],
-    stack: ["JavaScript", "HTML5/CSS3", "Accessibility", "Responsive"],
+    stack: ["JavaScript", "HTML5/CSS3", "Accessibility", "Responsive"], //Not displaying
   },
   {
     id: "softtek",
     tracks: ["Performance", "Modernization", "Developer Experience"],
     company: "Softtek",
     title: "Web Developer",
+    project: "General Electric Aviation & Rio 2016 Olympics",
     period: "Jul 2013 — Apr 2015",
     years: "2013",
     highlights: [
-      "Enhanced loading and UI/UX efficiency by 30% by developing a marketing web portal for GE Aviation.",
-      "Increased visitor engagement by 20% with the official GE Rio 2016 Olympics promotional website.",
-      'Earned GE Aviation\'s "Delivery Excellence" and "Best Creative & Innovative Solution" awards.',
+      "Developed GE's official Rio 2016 Olympics promotional website.",
+      "Contributed to GE Aviation's B2B workflows for supply chain and manufacturing.",
     ],
-    stack: ["JavaScript", "CMS", "UI/UX"],
+    stack: ["JavaScript", "CMS", "UI/UX"], //Not displaying
   },
 ];
 
@@ -178,41 +171,116 @@ export const skillGroups = [
   {
     title: "Frontend & Architecture",
     items: [
-      "React",
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "Zustand",
-      "TanStack Query",
-      "TailwindCSS",
-      "GraphQL",
-      "Node.js",
-      "Design Systems",
-      "UI Component Libraries",
-      "Storybook",
-      "Micro-frontends",
-      "Performance Optimization",
-      "Vite",
-      "Webpack",
-      "REST APIs",
-      "HTML5/CSS3",
+      {
+        name: "React",
+        src: "https://cdn.simpleicons.org/react/000000?size=14",
+      },
+      {
+        name: "TypeScript",
+        src: "https://cdn.simpleicons.org/typescript/000000?size=14",
+      },
+      {
+        name: "JavaScript (ES6+)",
+        src: "https://cdn.simpleicons.org/javascript/000000?size=14",
+      },
+      {
+        name: "Redux",
+        src: "https://cdn.simpleicons.org/redux/000000?size=14",
+      },
+      { name: "Zustand" },
+      {
+        name: "TanStack Query",
+        src: "https://cdn.simpleicons.org/tanstack/000000?size=14",
+      },
+      {
+        name: "Tailwind CSS",
+        src: "https://cdn.simpleicons.org/tailwindcss/000000?size=14",
+      },
+      {
+        name: "GraphQL",
+        src: "https://cdn.simpleicons.org/graphql/000000?size=14",
+      },
+      { name: "REST APIs" },
+      {
+        name: "Node.js",
+        src: "https://cdn.simpleicons.org/node.js/000000?size=14",
+      },
+      {
+        name: "Storybook",
+        src: "https://cdn.simpleicons.org/storybook/000000?size=14",
+      },
+      { name: "Vite", src: "https://cdn.simpleicons.org/vite/000000?size=14" },
+      {
+        name: "Webpack",
+        src: "https://cdn.simpleicons.org/webpack/000000?size=14",
+      },
+      {
+        name: "HTML5",
+        src: "https://cdn.simpleicons.org/html5/000000?size=14",
+      },
+      { name: "CSS3", src: "https://cdn.simpleicons.org/css/000000?size=14" },
+      {
+        name: "PostgreSQL",
+        src: "https://cdn.simpleicons.org/postgresql/000000?size=14",
+      },
     ],
   },
   {
     title: "Testing & Quality",
     items: [
-      "Jest",
-      "Vitest",
-      "React Testing Library",
-      "Playwright",
-      "Accessibility (a11y)",
-      "Performance Testing",
-      "ESLint",
-      "A/B Testing",
+      { name: "Jest", src: "https://cdn.simpleicons.org/jest/000000?size=14" },
+      {
+        name: "Vitest",
+        src: "https://cdn.simpleicons.org/vitest/000000?size=14",
+      },
+      {
+        name: "React Testing Library",
+        src: "https://cdn.simpleicons.org/testinglibrary/000000?size=14",
+      },
+      { name: "Accessibility (a11y)" },
+      { name: "Performance Testing" },
+      {
+        name: "ESLint",
+        src: "https://cdn.simpleicons.org/eslint/000000?size=14",
+      },
+      {
+        name: "Prettier",
+        src: "https://cdn.simpleicons.org/prettier/000000?size=14",
+      },
+      { name: "A/B Testing" },
     ],
   },
   {
     title: "Cloud & Collaboration",
-    items: ["AWS", "CI/CD", "Git", "GitHub Copilot", "Figma", "Agile"],
+    items: [
+      { name: "AWS" },
+      { name: "Git", src: "https://cdn.simpleicons.org/git/000000?size=14" },
+      {
+        name: "GitHub",
+        src: "https://cdn.simpleicons.org/github/000000?size=14",
+      },
+      {
+        name: "GitHub Actions",
+        src: "https://cdn.simpleicons.org/githubactions/000000?size=14",
+      },
+      {
+        name: "GitHub Copilot",
+        src: "https://cdn.simpleicons.org/githubcopilot/000000?size=14",
+      },
+      {
+        name: "Jenkins",
+        src: "https://cdn.simpleicons.org/jenkins/000000?size=14",
+      },
+      {
+        name: "Figma",
+        src: "https://cdn.simpleicons.org/figma/000000?size=14",
+      },
+      {
+        name: "Figma",
+        src: "https://cdn.simpleicons.org/figma/000000?size=14",
+      },
+      { name: "Agile" },
+    ],
   },
 ];
 

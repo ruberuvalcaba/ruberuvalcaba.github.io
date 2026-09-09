@@ -128,7 +128,8 @@ export default function App() {
         title="The spiral of a decade"
       >
         <p className="no-print -mt-6 mb-10 max-w-xl text-sm text-muted-foreground">
-          Each step outward is a new chapter. Select a node to unfold the story.
+          Each step outward is a new chapter. Select a node to unfold the
+          achievements.
         </p>
 
         <div className="print:hidden">
@@ -182,10 +183,17 @@ export default function App() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
-                    key={item}
-                    className="rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-foreground/80"
+                    key={item.name}
+                    className="rounded-full flex items-center gap-1 border border-border bg-secondary/50 px-3 py-1 text-xs text-foreground/80"
                   >
-                    {item}
+                    {item.src && (
+                      <img
+                        alt={item.name}
+                        className="object-contain dark:invert opacity-80"
+                        src={item.src}
+                      ></img>
+                    )}
+                    {item.name}
                   </li>
                 ))}
               </ul>
