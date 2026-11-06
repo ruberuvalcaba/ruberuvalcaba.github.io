@@ -1,4 +1,13 @@
-import { Github, Linkedin, Mail, Star, Moon, Sun, User } from "lucide-react";
+import {
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Mail,
+  Star,
+  Moon,
+  Sun,
+  User,
+} from "lucide-react";
 
 import { SpiralExperience } from "@/components/SpiralExperience";
 import { profile, stats, skillGroups, education, roles } from "@/data/resume";
@@ -120,6 +129,37 @@ export default function App() {
           ))}
         </dl>
       </header>
+
+      {/* Latest Projects */}
+      <Section id="projects" label="Selected work" title="Latest Projects">
+        <ul className="space-y-8">
+          <li>
+            <a
+              href="https://ai-movie-explorer.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+              className="group block max-w-3xl rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              data-umami-event="AI Movie Explorer click"
+            >
+              <div className="overflow-hidden rounded-xl border border-border">
+                <img
+                  src="/ai-movie-explorer.png"
+                  alt="AI Movie Explorer showing movie collections and its AI movie assistant"
+                  width={1920}
+                  height={957}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto w-full motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
+                />
+              </div>
+              <span className="mt-4 inline-flex items-center gap-2 text-primary group-hover:underline">
+                AI Movie Explorer
+                <ArrowUpRight aria-hidden="true" className="size-4" />
+              </span>
+            </a>
+          </li>
+        </ul>
+      </Section>
 
       {/* Experience */}
       <Section
