@@ -51,7 +51,7 @@ export default function LatestProjects() {
             }}
           >
             <p>
-              A real-time trading dashboard for the,{" "}
+              A real-time trading dashboard sample for the,{" "}
               <strong className="font-medium text-foreground">
                 Hyperliquid
               </strong>
