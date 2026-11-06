@@ -1,46 +1,13 @@
-import {
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  Mail,
-  Star,
-  Moon,
-  Sun,
-  User,
-} from "lucide-react";
+import { Github, Linkedin, Mail, Star, Moon, Sun, User } from "lucide-react";
 
+import LatestProjects from "@/components/LatestProjects";
+import Section from "@/components/Section";
 import { SpiralExperience } from "@/components/SpiralExperience";
 import { profile, stats, skillGroups, education, roles } from "@/data/resume";
 import { actionButtons } from "@/data/content";
 import { Link } from "react-router-dom";
 import DownloadResume from "@/components/DownloadResume";
 import ThemeToggleButton from "@/components/ui/ThemeToggleButton";
-
-function Section({
-  id,
-  label,
-  title,
-  children,
-}: {
-  id: string;
-  label: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-6 pt-20 sm:py-24">
-      <header className="mb-10">
-        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-primary">
-          {label}
-        </p>
-
-        <h2 className="mt-3 font-display text-4xl sm:text-5xl">{title}</h2>
-      </header>
-
-      {children}
-    </section>
-  );
-}
 
 export default function App() {
   const foundations = education?.[0] || { school: "", degree: "", period: "" };
@@ -130,36 +97,7 @@ export default function App() {
         </dl>
       </header>
 
-      {/* Latest Projects */}
-      <Section id="projects" label="Selected work" title="Latest Projects">
-        <ul className="space-y-8">
-          <li>
-            <a
-              href="https://ai-movie-explorer.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-              className="group block max-w-3xl rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-              data-umami-event="AI Movie Explorer click"
-            >
-              <div className="overflow-hidden rounded-xl border border-border">
-                <img
-                  src="/ai-movie-explorer.png"
-                  alt="AI Movie Explorer showing movie collections and its AI movie assistant"
-                  width={1920}
-                  height={957}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-auto w-full motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:scale-[1.02]"
-                />
-              </div>
-              <span className="mt-4 inline-flex items-center gap-2 text-primary group-hover:underline">
-                AI Movie Explorer
-                <ArrowUpRight aria-hidden="true" className="size-4" />
-              </span>
-            </a>
-          </li>
-        </ul>
-      </Section>
+      <LatestProjects />
 
       {/* Experience */}
       <Section
